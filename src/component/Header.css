@@ -1,0 +1,24 @@
+.Header-conatiner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    var(--color-background-100) 33%,
+    var(--color-background-400) 58%
+  );
+}
+
+.Header-conatiner :nth-child(1),
+.Header-conatiner :nth-child(2) {
+  margin: 0 1em;
+}
+
+.Header-image {
+  padding: 1em 1em;
+  width: 3.5em;
+}
+
+.Header-title {
+  color: var(--color-text-200);
+  font-size: 2rem;
+}

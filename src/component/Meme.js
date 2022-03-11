@@ -1,6 +1,7 @@
 import React from "react";
 import "./Meme.css";
 
+// Save data on the meme img when you write in the input
 function Meme() {
   const [meme, setMeme] = React.useState({
     topText: "",
@@ -10,6 +11,7 @@ function Meme() {
 
   const [allMemes, setAllMemes] = React.useState([]);
 
+  // Take API data from link and put in the page
   React.useEffect(() => {
     async function getMemes() {
       const res = await fetch("https://api.imgflip.com/get_memes");
@@ -19,6 +21,7 @@ function Meme() {
     getMemes();
   }, []);
 
+  // Function get random url with the useState
   function getMemeImage() {
     const randomNumber = Math.floor(Math.random() * allMemes.length);
     const url = allMemes[randomNumber].url;
@@ -27,6 +30,7 @@ function Meme() {
       randomImage: url,
     }));
   }
+  // The text will appear on the photo
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevMeme) => ({
